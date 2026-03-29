@@ -1,0 +1,24 @@
+ AI Reflection - Shahzodbek
+
+
+Strategic Overview
+In the development of this Event Calendar, I utilized AI as a technical consultant to accelerate the development lifecycle. This collaboration allowed me to focus on high-level architectural decisions and strict requirement adherence while leveraging AI for rapid scaffolding.
+
+Technical Contributions
+
+1. Schema Normalization (3NF)
+I directed the transition from a flat data structure to a **Strict 3rd Normal Form**. By consulting on the entity relationships, I ensured that Teams, Sports, and Events were properly decoupled, allowing for a more scalable and maintainable database schema.
+
+2. Performance & Optimization
+I collaborated on the backend logic to explicitly prevent N+1 query issues. The final implementation ensures efficient data retrieval through optimized JPA associations, meeting the performance standards expected for real-time sports data handling.
+
+3. Constraint Adherence
+I manually refactored the persistence layer to ensure compliance with the underscore-prefixed foreign key requirement. This required overriding standard Hibernate naming strategies to align with the project's specific technical brief.
+
+4. Dynamic Frontend Integration
+I utilized AI to refine the asynchronous JavaScript logic. This ensures the frontend stays decoupled from the backend, using the Fetch API to provide a seamless, dynamic user experience.
+
+
+
+Conclusion
+While AI provided structural support, the final architecture reflects my executive decisions regarding system performance, data integrity, and engineering best practices.
