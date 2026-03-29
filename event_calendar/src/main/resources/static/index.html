@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sportradar Event Calendar</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f4; }
+        nav { background: #333; color: white; padding: 15px; margin-bottom: 20px; }
+        nav a { color: white; margin-right: 15px; text-decoration: none; }
+        table { width: 100%; border-collapse: collapse; background: white; }
+        th, td { padding: 12px; border: 1px solid #ddd; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .status-played { color: green; font-weight: bold; }
+        .status-scheduled { color: blue; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <strong>Sportradar Calendar</strong>
+    <a href="#">Home</a>
+    <a href="#">Sports</a>
+    <a href="#">Settings</a>
+</nav>
+
+<h1>Upcoming & Past Events</h1>
+
+<table id="eventTable">
+    <thead>
+    <tr>
+        <th>Date</th>
+        <th>Time (UTC)</th>
+        <th>Sport / Competition</th>
+        <th>Home Team</th>
+        <th>Away Team</th>
+        <th>Score</th>
+        <th>Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+<script>
+    async function fetchEvents() {
+        try {
+            const response = await fetch('/api/events');
+            const events = await response.json();
+            const tableBody = document.querySelector('#eventTable tbody');
+
+            tableBody.innerHTML = events.map(event => `
+                <tr>
+                    <td>${event.dateVenue}</td>
+                    <td>${event.timeVenueUTC}</td>
+                    <td>${event.sport.name}</td>
+                    <td>${event.homeTeam.name}</td>
+                    <td>${event.awayTeam.name}</td>
+                    <td>${event.homeGoals} - ${event.awayGoals}</td>
+                    <td class="status-${event.status}">${event.status.toUpperCase()}</td>
+                </tr>
+            `).join('');
+        } catch (error) {
+            console.error('Error fetching events:', error);
+        }
+    }
+
+    fetchEvents();
+</script>
+
+</body>
+</html>

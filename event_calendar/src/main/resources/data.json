@@ -1,0 +1,46 @@
+{
+  "data": [
+    {
+      "season": 2024,
+      "status": "played",
+      "timeVenueUTC": "00:00:00",
+      "dateVenue": "2024-01-03",
+      "homeTeam": {
+        "name": "Al Shabab",
+        "officialName": "Al Shabab FC",
+        "abbreviation": "SHA",
+        "teamCountryCode": "KSA"
+      },
+      "awayTeam": {
+        "name": "Nasaf",
+        "officialName": "FC Nasaf",
+        "abbreviation": "NAS",
+        "teamCountryCode": "UZB"
+      },
+      "homeGoals": 1,
+      "awayGoals": 2,
+      "originCompetitionName": "AFC Champions League"
+    },
+    {
+      "season": 2024,
+      "status": "scheduled",
+      "timeVenueUTC": "16:00:00",
+      "dateVenue": "2024-01-03",
+      "homeTeam": {
+        "name": "Al Hilal",
+        "officialName": "Al Hilal Saudi FC",
+        "abbreviation": "HIL",
+        "teamCountryCode": "KSA"
+      },
+      "awayTeam": {
+        "name": "Shabab Al Ahli",
+        "officialName": "SHABAB AL AHLI DUBAI",
+        "abbreviation": "SAH",
+        "teamCountryCode": "UAE"
+      },
+      "homeGoals": 0,
+      "awayGoals": 0,
+      "originCompetitionName": "AFC Champions League"
+    }
+  ]
+}
